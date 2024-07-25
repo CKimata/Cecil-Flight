@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+img {
+    float: left;
+}
+
+
+nav ul {
+    padding: 0;
+    display: flex;
+    justify-content: space-between; /* This will space out the items evenly */
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    color: none;
+    background-color: white;
+}
+
+main {
+    padding: 20px;
+}
+.contact-container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px gray;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+}
+
+button {
+    padding: 10px;
+    background-color: red;
+    color: whitesmoke;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 550px;
+}
+
+.wrapper .sidebar .social_media{
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    transform: translate(-50%);
+    display: flex;
+  }
+  .wrapper .sidebar .social_media a{
+    display: block;
+    width: 30px;
+    background: red;
+    line-height: 30px;
+    text-align: center;
+    margin: 0.5px;
+    color: black;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+
+footer {
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

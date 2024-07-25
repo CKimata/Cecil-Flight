@@ -1,0 +1,127 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Adjust based on your needs */
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    color: red;
+}
+
+nav {
+    height: 48px;
+}
+
+nav ul {
+    padding: 0;
+    display: flex;
+    justify-content: space-between; /* This will space out the items evenly */
+    list-style-type: none;
+}
+
+nav li a {
+    font-family: cursive;
+    color: #ff1e4b;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    color: none;
+    background-color: white;
+}
+#slideshow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+   }
+   
+   .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: slideShow 100s infinite;
+}
+
+.slide:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.slide:nth-child(2) {
+    animation-delay: 3s;
+}
+
+.slide:nth-child(3) {
+    animation-delay: 6s;
+}
+
+.slide:nth-child(4) {
+    animation-delay: 9s;
+}
+
+.slide:nth-child(5) {
+    animation-delay: 12s;
+}
+
+.slide:nth-child(6) {
+    animation-delay: 15s;
+}
+
+.slide:nth-child(7) {
+    animation-delay: 18s;
+}
+
+.slide:nth-child(8) {
+    animation-delay: 21s;
+}
+
+.slide:nth-child(9) {
+    animation-delay: 24s;
+}
+
+.slide:nth-child(10) {
+    animation-delay: 27s;
+}
+
+@keyframes slideShow {
+    0%, 20% { opacity: 0; }
+    25%, 45% { opacity: 1; }
+    50%, 70% { opacity: 0; }
+    75%, 95% { opacity: 1; }
+    100% { opacity: 0; }
+}

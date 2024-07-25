@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+img {
+    float: left;
+}
+
+
+nav ul {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    color: none;
+    background-color: white;
+}
+
+main {
+    padding: 20px;
+}
+
+.schedule-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+}
+
+.game {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.team-badge {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.game span {
+    margin: 0 10px;
+}
+
+.game p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.wrapper .sidebar .social_media{
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    transform: translate(-50%);
+    display: flex;
+  }
+  .wrapper .sidebar .social_media a{
+    display: block;
+    width: 30px;
+    background: red;
+    line-height: 30px;
+    text-align: center;
+    margin: 0.5px;
+    color: white;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+
+footer {
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
