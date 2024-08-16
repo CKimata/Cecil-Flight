@@ -62,6 +62,9 @@ main {
     list-style-type: none;
     padding: 0;
 }
+.hidden {
+    display: none;
+}
 footer {
     background-color: red;
     color: white;

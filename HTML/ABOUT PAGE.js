@@ -30,3 +30,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     renderPlayers(); // Initial render
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleDetailsButton = document.getElementById('toggleDetails');
+    
+    toggleDetailsButton.addEventListener('click', function() {
+        const playerDetailsContainer = document.getElementById('playerDetailsContainer');
+        playerDetailsContainer.classList.toggle('hidden');
+        
+        // Optionally, change the button text based on the visibility state
+        if (playerDetailsContainer.classList.contains('hidden')) {
+            toggleDetailsButton.textContent = 'Show Player Details';
+        } else {
+            toggleDetailsButton.textContent = 'Hide Player Details';
+        }
+    });
+});
