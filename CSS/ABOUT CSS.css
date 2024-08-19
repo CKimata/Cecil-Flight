@@ -58,13 +58,6 @@ main {
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
   }
-  #players ul {
-    list-style-type: none;
-    padding: 0;
-}
-.hidden {
-    display: none;
-}
 footer {
     background-color: red;
     color: white;
