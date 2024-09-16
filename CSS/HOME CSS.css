@@ -54,14 +54,14 @@ nav ul {
 
 nav li a {
     font-family: cursive;
-    color: #ff1e4b;
+    color: white;
     font-size: 16px;
     text-decoration: none;
 }
 
 nav li a:hover {
     color: none;
-    background-color: white;
+    background-color: red;
 }
 #slideshow {
     position: relative;
