@@ -18,7 +18,7 @@ img {
 nav ul {
     padding: 0;
     display: flex;
-    justify-content: space-between; /* This will space out the items evenly */
+    justify-content: space-between;
     list-style-type: none;
 }
 nav ul li {
