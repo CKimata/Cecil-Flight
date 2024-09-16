@@ -7,7 +7,7 @@ body, html {
 .image-container {
     position: relative;
     width: 100%;
-    height: 100vh; /* Adjust based on your needs */
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -23,7 +23,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,7 +48,7 @@ nav {
 nav ul {
     padding: 0;
     display: flex;
-    justify-content: space-between; /* This will space out the items evenly */
+    justify-content: space-between;
     list-style-type: none;
 }
 
