@@ -1,54 +1,47 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('contact-form');
+// Replace these values with your own from EmailJS dashboard
+const SERVICE_ID = 'your_service_id';
+const TEMPLATE_ID = 'your_template_id';
+const USER_ID = 'your_user_id';
 
-    form.addEventListener('submit', async function(e) {
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contact-form');
+
+    contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
+        // Get form data
         const formData = new FormData(this);
-        const { name, email, subject, message } = Object.fromEntries(formData);
 
-        try {
-            const response = await fetch('/send-email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    to: 'collokim36@gmail.com',
-                    senderName: name,
-                    senderEmail: email,
-                    subject: subject,
-                    message: message
-                })
-            });
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-
-            const result = await response.json();
-            if (result.success) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Email Sent!',
-                    text: 'Your message has been sent successfully.'
-                });
-                // Clear form fields after successful submission
-                this.reset();
+        // Send AJAX request
+        fetch('/contact_handler.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                showAlert('Email sent successfully!', 'success');
             } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error Sending Email',
-                    text: 'Please try again later.'
-                });
+                showAlert(data.message, 'error');
             }
-        } catch (error) {
+        })
+        .catch(error => {
             console.error('Error:', error);
-            Swal.fire({
-                icon: 'error',
-                title: 'Error Sending Email',
-                text: 'An unexpected error occurred. Please try again later.'
-            });
-        }
+            showAlert('An unexpected error occurred.', 'error');
+        });
+
+        // Reset form after submission
+        this.reset();
     });
 });
+
+function showAlert(message, type) {
+    const alertBox = document.createElement('div');
+    alertBox.className = `alert ${type}`;
+    alertBox.textContent = message;
+    document.body.appendChild(alertBox);
+
+    setTimeout(() => {
+        alertBox.remove();
+    }, 3000);
+}
