@@ -6,29 +6,32 @@ const USER_ID = 'your_user_id';
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contact-form');
 
+    if (!contactForm) {
+        console.error("Contact form not found");
+        return;
+    }
+
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
         // Get form data
         const formData = new FormData(this);
 
-        // Send AJAX request
-        fetch('/contact_handler.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
+        // Validate form data
+        if (!formData.get('name') || !formData.get('email') || !formData.get('message')) {
+            showAlert('Please fill out all fields.', 'error');
+            return;
+        }
+
+        // Send email using EmailJS
+        window.emailjs.send(SERVICE_ID, TEMPLATE_ID, Object.fromEntries(formData))
+            .then((result) => {
+                console.log('SUCCESS!', result.status, result.text);
                 showAlert('Email sent successfully!', 'success');
-            } else {
-                showAlert(data.message, 'error');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            showAlert('An unexpected error occurred.', 'error');
-        });
+            }, (error) => {
+                console.log('FAILED...', error);
+                showAlert('An unexpected error occurred.', 'error');
+            });
 
         // Reset form after submission
         this.reset();
@@ -37,11 +40,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function showAlert(message, type) {
     const alertBox = document.createElement('div');
-    alertBox.className = `alert ${type}`;
+    alertBox.className = `alert` + type;
     alertBox.textContent = message;
     document.body.appendChild(alertBox);
-
-    setTimeout(() => {
+       setTimeout(() => {
         alertBox.remove();
     }, 3000);
 }
